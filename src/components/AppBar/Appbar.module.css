@@ -1,0 +1,42 @@
+.header{
+    position: relative;
+    padding: 10px;
+    background-color: #f8f8f8;
+    display: flex;
+    justify-content: flex-end
+
+}
+.info{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 50px;
+}
+.email{
+    font-family: "Josefin Slab", serif;
+    font-weight: 800;
+    font-size: 30px;
+    margin: 0;
+    color: #26436C;
+    margin-right: 20px;
+}
+
+.buttonlogout {
+    background-color: #26436C;
+    color: white;
+    border: 1px solid #26436C;
+    padding: 10px;
+    border-radius: 18px;
+    font-weight: 400;
+    font-size: 25px;
+    height: 40px;
+    font-family: "Josefin Slab", serif;
+    flood-color: #DFD1BB;
+    margin-right: 20px;
+}
+    
+      
+.buttonlogout:hover {
+    background-color: #89CCFF;
+    border: 1px solid #89CCFF;
+}

@@ -1,0 +1,160 @@
+/* Загальний контейнер сторінки */
+.settingsContainer {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Заголовок сторінки */
+  .settingsTitle {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #233fd3;
+  }
+  
+  /* Заголовки секцій */
+  .sectionTitle {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  /* Контейнер форми */
+  .passwordForm {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  /* Контейнер для кожного поля вводу */
+  .formGroup {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Мітка (label) */
+  .formLabel {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 5px;
+  }
+  
+  /* Поле вводу */
+  .formInput {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: border-color 0.3s ease;
+  }
+  
+  .formInput:focus {
+    border-color: #233fd3;
+    outline: none;
+  }
+  
+  /* Кнопка форми */
+  .submitButton {
+    padding: 10px 15px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background-color: #233fd3;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .submitButton:hover {
+    background-color: #1a2fa6;
+  }
+  
+  /* Горизонтальна лінія */
+  .divider {
+    margin: 20px 0;
+    border: 0;
+    height: 1px;
+    background-color: #ddd;
+  }
+  
+  /* Секція аватарки */
+  .avatarSection {
+    text-align: center;
+  }
+  
+  /* Контейнер для попереднього перегляду аватарки */
+  .avatarPreviewContainer {
+    margin-bottom: 10px;
+  }
+  
+  /* Стиль зображення попереднього перегляду */
+  .avatarPreview {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #233fd3;
+  }
+  
+  /* Кнопка вибору файлу */
+  .fileInput {
+    display: block;
+    margin: 10px auto;
+    font-size: 14px;
+  }
+  
+  /* Кнопка завантаження аватарки */
+  .uploadButton {
+    padding: 10px 15px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background-color: #28a745;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .uploadButton:hover {
+    background-color: #218838;
+  }
+  
+  /* Секція видалення акаунта */
+  .deleteSection {
+    text-align: center;
+  }
+  
+  /* Текст попередження */
+  .warningText {
+    font-size: 14px;
+    color: #d9534f;
+    margin-bottom: 15px;
+  }
+  
+  /* Кнопка видалення акаунта */
+  .deleteButton {
+    padding: 10px 15px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background-color: #d9534f;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .deleteButton:hover {
+    background-color: #c9302c;
+  }
+  

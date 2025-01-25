@@ -1,0 +1,195 @@
+.reactcalendar {
+    border-radius: 15px !important;
+    border: 0 !important;
+    width: 280px !important;
+}
+
+.reactcalendar .react-calendar__navigation {
+    background-color: var(--calendar-nav-bg-color) !important;
+    color: white !important; /* Колір тексту у навігації */
+}
+
+.reactcalendar .react-calendar__navigation button {
+    font-size: 1rem !important; /* Розмір тексту кнопок навігації */
+    color: white !important; /* Колір тексту */
+}
+
+.reactcalendar .react-calendar__tile {
+    font-size: var(--calendar-date-font-size) !important; /* Розмір шрифту дат */
+    padding: 10px !important;
+}
+
+.reactcalendar .react-calendar__tile--now {
+    background-color: gray !important; /* Колір для сьогоднішньої дати */
+}
+
+.reactcalendar .react-calendar__tile--active {
+    background-color: #4caf50 !important; /* Колір для вибраної дати */
+    color: white !important;
+}
+
+.highlightTask {
+    background-color: #233FD3 !important; /* Колір підсвічування днів із завданнями */
+    color: white !important;
+    font-weight: bold !important;
+    height: 37px;
+    width: 40px;
+    border-radius: 50%;
+}
+
+.customMonthYear {
+    font-size: 1.5rem !important; /* Розмір тексту місяця і року */
+    font-weight: bold !important;
+    color: #233FD3 !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+.taskList {
+    margin-top: 20px !important;
+    opacity: 0;
+    animation: fadeIn 0.5s forwards; /* Анімація появи */
+    width: 305px;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px); /* Початкове положення: знизу */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* Завершальне положення: на місці */
+    }
+}
+
+.taskItem {
+    border: 1px solid #e0e0e0;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    background-color: #f9f9f9;
+    opacity: 0;
+    animation: fadeInItem 0.5s forwards; /* Анімація для кожного елемента */
+    animation-delay: 0.2s; /* Затримка для кожного елемента */
+}
+
+@keyframes fadeInItem {
+    0% {
+        opacity: 0;
+        transform: translateY(10px); /* Початкове положення елементів */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* Завершальне положення елементів */
+    }
+}
+.taskItem {
+    border: 1px solid #e0e0e0;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    background-color: #f9f9f9; /* Сірий фон для невиконаних */
+    display: flex;
+    align-items: center; /* Вирівнювання по вертикалі */
+    justify-content: center; /* Вирівнювання по горизонталі */
+    position: relative;
+    text-align: center; /* Вирівнювання тексту по центру */
+    transition: all 0.3s ease;
+}
+
+.taskItem.completed {
+    background-color: #d4f8e8; /* Зелений фон для виконаних */
+    border-color: #4caf50; /* Зелена межа для виконаних */
+    box-shadow: 0 0 10px rgba(76, 175, 80, 0.7); /* Світіння навколо для виконаних */
+}
+
+.taskCompletedIcon {
+    width: 24px; /* Трошки більша галочка */
+    height: 24px;
+    background-color: #4caf50; /* Зелена галочка */
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 15px; /* Міжгалочка */
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.taskCompletedIcon::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 12px;
+    height: 12px;
+    background-color: white;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    display: block; /* Галочка завжди відображається */
+}
+
+.taskItem .taskName {
+    color: #333; /* Чорний колір тексту для всіх тасок */
+    font-size: 16px;
+}
+
+.taskItem.completed .taskName {
+    color: #4caf50; /* Зелений колір тексту для виконаних тасок */
+    text-decoration: line-through; /* Перечеркнутий текст для виконаних */
+    font-weight: bold;
+}
+.reactcalendar .react-calendar__tile--now {
+    background-color: #d3d3d3 !important; /* Сірий колір для сьогоднішнього дня */
+    color: black !important; /* Чорний текст */
+    font-weight: bold !important;
+    border-radius: 50% !important; /* Кругла форма */
+    transition: transform 0.2s !important; /* Анімація при взаємодії */
+}
+
+.reactcalendar .react-calendar__tile--now:hover {
+    background-color: #bdbdbd !important; /* Трохи темніший сірий при наведенні */
+    transform: scale(1.05) !important; /* Легке збільшення */
+}
+
+.react-calendar__tile--active {
+    background: #8d9092 !important;
+    color: white !important;
+}
+
+.react-calendar__tile--active {
+    background: white !important;
+    color: white !important;
+}
+
+.react-calendar__tile--now {
+    background: gainsboro !important;
+}
+.reactcalendar .react-calendar__tile--now {
+    background-color: #d3d3d3 !important; /* Сірий колір для сьогоднішнього дня */
+    color: black !important; /* Чорний текст */
+    font-weight: bold !important;
+    border-radius: 50% !important; /* Кругла форма */
+    transition: transform 0.2s !important; /* Анімація при взаємодії */
+}
+
+.reactcalendar .react-calendar__tile--now:hover {
+    background-color: #bdbdbd !important; /* Трохи темніший сірий при наведенні */
+    transform: scale(1.05) !important; /* Легке збільшення */
+}
+
+.reactcalendar .react-calendar__tile--hasTask {
+    background-color: #233FD3 !important; /* Колір для днів з завданнями */
+    color: white !important;
+    border-radius: 50% !important; /* Кругла форма для днів з завданнями */
+    font-weight: bold !important;
+    height: 44px;
+}
+.reactCalendar__tileNow {
+    background-color: rgb(240, 238, 238) !important;
+    color: black !important;
+    font-weight: bold;
+    border-radius: 50%;
+    height: 44px;
+  }
+

@@ -1,15 +1,125 @@
-@import-normalize; /* bring in normalize.css styles */
+@import '~normalize.css';
 
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  margin: 0; /* Забираємо стандартні відступи */
+ /* Додаємо горизонтальні падінги для відступів */
+  
+  font-size: 16px; /* Задаємо стандартний розмір шрифту */
+  color: #333333; /* Темно-сірий колір тексту */
+  background-color: #F9F9F9; /* Світлий фон для приємного вигляду */
+  line-height: 1.6; /* Комфортна висота рядка для читання */
+  box-sizing: border-box; /* Врахування бордерів у розмірах елементів */
+  font-family: 'Inter', sans-serif;
+  
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
+
+
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+/* Встановлює основні нулі та прибирає марджини */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Налаштування основного вигляду для елементів */
+html {
+  line-height: 1.15; /* Зробити текст читабельнішим */
+  -webkit-text-size-adjust: 100%; /* Вимкнути зміни розміру шрифту в Safari */
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif; /* Встановити стандартний шрифт */
+  line-height: 1.6;
+}
+
+/* Стилі для заголовків */
+h1, h2, h3, h4, h5, h6 {
+  font-size: 100%;
+  font-weight: normal;
+  margin: 0;
+}
+
+/* Стилі для списків */
+ul,
+ol {
+  margin: 0;
+  padding-left: 1.5em; /* Додає відступ для елементів списку */
+}
+
+li {
+  list-style-type: none; /* Прибирає маркери */
+}
+
+/* Стилі для посилань */
+a {
+  text-decoration: none;
+  color: inherit; /* Залишає колір посилання відповідно до тексту */
+}
+
+/* Стилі для зображень */
+img {
+  max-width: 100%;
+  height: auto; /* Забезпечити, щоб зображення масштабувалося відповідно до контейнера */
+  display: block;
+}
+
+/* Встановлення ширини і вирівнювання для елементів форм */
+button,
+input,
+textarea,
+select {
+  font: inherit; /* Успадковує шрифт від батьківського елемента */
+  display: block;
+}
+
+button {
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+/* Видалення стандартних стилів таблиць */
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+div{
+  margin: 0;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 0.5em;
+  border: 1px solid #ddd; /* Додає простий бордер для клітинок таблиці */
+}
+
+/* Встановлення стилів для елементів, що зазвичай мають відступи */
+p,
+blockquote,
+figure {
+  margin: 0;
+}
+
+/* Встановлення стилів для загальних елементів */
+address {
+  font-style: normal; /* Вимкнути курсив за замовчуванням */
+}
+
+/* Вирівнювання для елементів з тегом hr */
+hr {
+  border: none;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
 }

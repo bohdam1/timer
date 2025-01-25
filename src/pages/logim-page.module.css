@@ -1,0 +1,66 @@
+/* logim-page.module.css */
+.loginPage {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-color: #f4f4f4;
+}
+
+.formSide {
+ 
+}
+
+.textSide {
+    width: 50%;
+    padding: 40px;
+    text-align: left;
+    color: #333;
+}
+
+.textSide h2 {
+    color: #233FD3;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.textSide p {
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.shapes {
+    position: absolute;
+    top: 10%;
+    right: 10%;
+    width: 200px;
+    height: 200px;
+    background-color: #233FD3;
+    clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+    transform: rotate(45deg);
+}
+
+.shapes::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    left: 50px;
+    width: 100px;
+    height: 100px;
+    background-color: #233FD3;
+    border-radius: 50%;
+    z-index: -1;
+}
+
+.shapes::after {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: -70px;
+    width: 150px;
+    height: 150px;
+    background-color: #233FD3;
+    clip-path: circle();
+    z-index: -1;
+}

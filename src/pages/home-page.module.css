@@ -1,0 +1,68 @@
+.home_page{
+    padding: 0 20px;
+    display: flex;
+    height: 100%;
+}
+
+.calendar_container{
+    background-color: #e6e6e6;
+    
+    padding: 20px;
+}
+
+.new_task_button{
+    margin-left: 40px;
+    margin-bottom: 20px;
+    background-color: #233FD3; /* Основний синій колір */
+    color: #FFFFFF; /* Білий текст для контрасту */
+    border: none; /* Забираємо стандартну рамку */
+    border-radius: 8px; /* Згладжені кути */
+    padding: 12px 20px; /* Відступи для комфортного кліку */
+    font-size: 16px; /* Розмір шрифту */
+    font-weight: bold; /* Жирний текст */
+    cursor: pointer; /* Зміна курсора при наведенні */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Тінь для об'єму */
+    transition: all 0.3s ease; /* Анімація на взаємодію */
+  }
+  
+  .new_task_button:hover {
+    background-color: #999a9e; /* Трохи темніший синій при наведенні */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Сильніша тінь при наведенні */
+  }
+  
+  .new_task_button:active {
+    background-color: #14248A; /* Ще темніший синій при натисканні */
+    transform: scale(0.98); /* Легка анімація натискання */
+  }
+  
+  .filter_buttons{
+    display: flex;
+   justify-content: center;
+  }
+  .task_list{
+    width: 100%;
+  }
+
+  .filter_button {
+    background-color: #233FD3; /* Основний синій колір */
+    color: #FFFFFF; /* Білий текст */
+    border: none; /* Забираємо стандартну рамку */
+    border-radius: 6px; /* Згладжені кути */
+    padding: 10px 16px; /* Внутрішні відступи для комфортного кліку */
+    font-size: 14px; /* Розмір шрифту */
+    font-weight: 500; /* Напівжирний текст */
+    cursor: pointer; /* Рука-курсор при наведенні */
+    margin: 5px; /* Відступ між кнопками */
+    transition: all 0.3s ease; /* Анімація взаємодії */
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); /* Легка тінь для об'єму */
+  }
+  
+  .filter_button:hover {
+    background-color: #999a9e; /* Трохи темніший синій при наведенні */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Сильніша тінь при наведенні */
+  }
+  
+  .filter_button:active {
+    background-color: #999a9e; /* Ще темніший синій при натисканні */
+    transform: scale(0.96); /* Легка анімація натискання */
+  }
