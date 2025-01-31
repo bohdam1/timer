@@ -1,0 +1,249 @@
+.card {
+  background-color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 1rem;
+  width: 27rem;
+  margin: 1rem auto;
+  transition: transform 0.3s ease-in-out;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.temp_conteiner {
+  display: flex;
+  align-items: center;
+}
+
+.profileInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 60%;
+}
+
+.weatherContainer {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.weatherIcon {
+  width: 4rem;
+  height: 4rem;
+}
+
+.temperature {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.mapContainer {
+  width: 63%;
+  height: 300px;
+}
+
+@media (max-width: 1024px) {
+  .mapContainer {
+    width: 100%;
+    height: 250px;
+  }
+}
+
+@media (max-width: 768px) {
+  .mapContainer {
+    width: 100%;
+    height: 200px;
+  }
+}
+
+.buttonContainer {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.button {
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  flex: 1;
+  margin: 0 0.5rem;
+  text-align: center;
+}
+
+.saveButton {
+  background-color: #3b82f6;
+  color: white;
+}
+
+.saveButton:hover {
+  background-color: #2563eb;
+}
+
+.weatherButton {
+  background-color: #10b981;
+  color: white;
+}
+
+.weatherButton:hover {
+  background-color: #059669;
+}
+
+.modalOverlay {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25rem;
+  height: 25rem;
+  z-index: 99999;
+}
+
+@media (max-width: 1024px) {
+  .modalOverlay {
+    width: 16rem;
+    height: 39rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .modalOverlay {
+    width: 34%;
+    height: 84%;
+  }
+}
+
+@media (max-width: 480px) {
+  .modalOverlay {
+    width: 95%;
+    height: auto;
+    
+    padding: 1rem;
+  }
+}
+
+.modalContent {
+  background-color: white;
+  border-radius: 8px;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  max-width: 90%;
+  text-align: center;
+  height: 360px;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+@media (max-width: 1000px) {
+  .modalContent {
+    height: 500px;
+  }
+}
+
+@media (max-width: 480px) {
+  .modalContent {
+  }
+}
+
+.closeButton {
+  background-color: #ef4444;
+  color: white;
+  margin-top: 5px;
+  height: 37px;
+}
+
+.closeButton:hover {
+  background-color: #dc2626;
+}
+
+@media (max-width: 1024px) {
+  .profileImage {
+    width: 4rem;
+    height: 4rem;
+  }
+
+  .card {
+    max-width: 18rem;
+    flex-direction: column;
+  }
+
+  .userName {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .profileImage {
+    width: 5rem;
+    height: 5rem;
+  }
+
+  .card {
+    max-width: 100%;
+    padding: 1rem;
+  }
+
+  .userName {
+    font-size: 1rem;
+  }
+
+  .buttonContainer {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .button {
+    width: 100%;
+  }
+
+  .mapContainer {
+    width: 100%;
+    height: 250px;
+  }
+}
+
+.hourlyForecastTableContainer {
+  height: 300px;
+  overflow-y: auto;
+  margin-top: 10px;
+}
+
+.hourlyForecastTable {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.hourlyForecastTable th,
+.hourlyForecastTable td {
+  padding: 8px;
+  text-align: left;
+  border: 1px solid #ddd;
+  word-wrap: break-word;
+}
+
+.hourlyForecastTable th {
+  background-color: #f4f4f4;
+  font-weight: bold;
+}
+
+.hourlyForecastTable th,
+.hourlyForecastTable td {
+  padding: 4px; /* Зменшено відступи в клітинках */
+  font-size: 0.9rem; /* Зменшено розмір шрифтів */
+  text-align: left;
+  border: 1px solid #ddd;
+  word-wrap: break-word;
+}
+
+.hourlyForecastTable th {
+  background-color: #f4f4f4;
+  font-weight: bold;
+}

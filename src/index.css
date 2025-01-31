@@ -1,5 +1,6 @@
 @import '~normalize.css';
 
+
 body {
   margin: 0; /* Забираємо стандартні відступи */
  /* Додаємо горизонтальні падінги для відступів */
@@ -15,7 +16,15 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-
+.profile-image-map {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;  /* Кругла форма */
+  object-fit: cover;   /* Завжди вміщує зображення в межах іконки */
+}
+.leaflet-control-attribution{
+  display: none;
+}
 
 
 code {
