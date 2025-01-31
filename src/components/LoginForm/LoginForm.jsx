@@ -46,10 +46,10 @@ export const LoginForm = () => {
   return (
     
       <form className={css.form} onSubmit={handleSubmit} autoComplete="off">
-        <h2 className={css.title}>Log in / Sign Up</h2>
+      
         
         <label className={css.label}>
-          <span className={css.span}>Email Address</span>
+          <span className={css.span}>Адреса електронної пошти</span>
           <input
             className={css.input}
             type="email"
@@ -61,7 +61,7 @@ export const LoginForm = () => {
         </label>
         
         <label className={css.label}>
-          <span className={css.span}>Password</span>
+          <span className={css.span}>Пароль</span>
           <input
             className={css.input}
             type="password"
@@ -74,10 +74,10 @@ export const LoginForm = () => {
 
         
 
-        <button className={css.button} type="submit">Log in</button>
+        <button className={css.button} type="submit">Авторизуватися</button>
 
         <div className={css.footer}>
-          Don't have an account? <Link className={css.link} to="/join"> Sign Up</Link>
+        Немає облікового запису?<Link className={css.link} to="/join">Зареєструватися</Link>
         </div>
       </form>
     

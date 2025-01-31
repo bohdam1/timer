@@ -1,32 +1,36 @@
 .home_page{
-    padding: 0 20px;
     display: flex;
-    height: 100%;
+    height: 703px;
 }
 
 .calendar_container{
     background-color: #e6e6e6;
-    
-    padding: 20px;
+    width: 356px;
+    padding: 40px;
+    background-color: #433ECC;
+    height: 100%;
 }
 
 .new_task_button{
-    margin-left: 40px;
-    margin-bottom: 20px;
+    width: 276px;
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    height: 49px;
     background-color: #233FD3; /* Основний синій колір */
     color: #FFFFFF; /* Білий текст для контрасту */
-    border: none; /* Забираємо стандартну рамку */
+    border: 1px solid #FFFFFF; /* Забираємо стандартну рамку */
     border-radius: 8px; /* Згладжені кути */
     padding: 12px 20px; /* Відступи для комфортного кліку */
     font-size: 16px; /* Розмір шрифту */
     font-weight: bold; /* Жирний текст */
     cursor: pointer; /* Зміна курсора при наведенні */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Тінь для об'єму */
+    
     transition: all 0.3s ease; /* Анімація на взаємодію */
+    margin-bottom: 34px;
   }
   
   .new_task_button:hover {
-    background-color: #999a9e; /* Трохи темніший синій при наведенні */
+    background-color: #FFFFFF; /* Трохи темніший синій при наведенні */
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Сильніша тінь при наведенні */
   }
   
@@ -40,7 +44,7 @@
    justify-content: center;
   }
   .task_list{
-    width: 100%;
+   
   }
 
   .filter_button {

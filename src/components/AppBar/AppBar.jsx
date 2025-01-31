@@ -28,11 +28,11 @@ export const AppBar = () => {
       // }
     };
   
-    return (
-      <header className={css.header}>
+    // return (
+    //   <header className={css.header}>
         
-        <ProfileMenu/>
+    //     <ProfileMenu/>
 
-      </header>
-    );
+    //   </header>
+    // );
   };

@@ -27,8 +27,9 @@ export const HomeScreen = () => {
     <div className={css.home_page}>
       {token && (
         <>
+      
         <div className={css.calendar_container}>
-          <button onClick={handleCreateTaskClick} className={css.new_task_button}>+ Створити</button>
+          <button onClick={handleCreateTaskClick} className={css.new_task_button}>+ Додати завдання</button>
           {showTaskForm && <NewTask onClose={handleCloseTaskForm} />}
           <TaskCalendar/>
         </div>
@@ -38,7 +39,7 @@ export const HomeScreen = () => {
               <button onClick={() => handleFilterChange("all")} className={css.filter_button}>Усі</button>
               <button onClick={() => handleFilterChange("completed")} className={css.filter_button}>Виконані</button>
             </div>
-            <TaskList filter={filter} />
+            {/* <TaskList filter={filter} /> */}
 
           </div>
         </>

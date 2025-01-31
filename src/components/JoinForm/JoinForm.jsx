@@ -47,8 +47,9 @@ export const JoinForm = () => {
   return (
     <>
       <form className={css.form} onSubmit={handleSubmit} autoComplete="off">
+        <h2 className={css.title}>Ласкаво просимо до реєстрації !</h2>
         <label className={css.label}>
-          <span className={css.span}>Name</span>
+          <span className={css.span}>Ім‘я</span>
           <input
             className={css.input}
             type="text"
@@ -58,7 +59,7 @@ export const JoinForm = () => {
           />
         </label>
         <label className={css.label}>
-          <span className={css.span}>Password</span>
+          <span className={css.span}>Пароль</span>
           <input
             className={css.input}
             type="password"
@@ -68,7 +69,7 @@ export const JoinForm = () => {
           />
         </label>
         <label className={css.label}>
-          <span className={css.span}>Email</span>
+          <span className={css.span}>Електронна пошта</span>
           <input
             className={css.input}
             type="email"
@@ -79,14 +80,14 @@ export const JoinForm = () => {
         </label>
 
         <button className={css.button} type="submit">
-          Register
+        Зареєструватись
         </button>
 
         {/* Додано посилання для переходу на сторінку входу */}
         <p className={css.footerText}>
-          Already have an account?{" "}
+          Вже зареєстровані?{" "}
           <Link to="/login" className={css.link}>
-            Log in
+            Увійти
           </Link>
         </p>
       </form>

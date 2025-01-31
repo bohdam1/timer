@@ -1,0 +1,58 @@
+.join_page{
+    display: flex;
+   background-color: #fff;
+    justify-content:center;
+  
+    padding: 50px 0 50px;
+}
+.left_side{
+    width: 712px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items:start;
+}
+
+.userSection{
+    font-family: 'Lohit Devanagari', sans-serif;
+    font-size: 20px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+   
+    margin-left: 53px;
+    
+}
+.userGreeting{
+    color: #433ECC;
+    margin-left: 3px;
+}
+.logo {
+    width: 141px;
+    height: 32px;
+  
+}
+.username{
+   
+}
+.logo_con{
+    display: flex;
+    justify-content:flex-start;
+    align-items: center;
+   
+}
+
+.img_con{
+    margin-top: 60px;
+    margin-left: 59px;
+  
+    width: 653px;
+    height: 456px;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.photo{
+ margin-top: 20px;
+}

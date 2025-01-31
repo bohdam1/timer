@@ -1,66 +1,118 @@
-/* logim-page.module.css */
+/* login-page.module.css */
 .loginPage {
     display: flex;
-    height: 100vh;
-    justify-content: center;
+    height: 700px;
+    justify-content:center;
     align-items: center;
     position: relative;
-    background-color: #f4f4f4;
+    background-color: #fff;
+    max-width: 1550px;
 }
 
 .formSide {
- 
+    height: 100%;
+    display: flex
+;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 50px 70px 50px 129px;
+    width: 779px;
 }
 
+.logo {
+    width: 141px;
+    height: 32px;
+    margin-bottom: 15px;
+}
+
+.title {
+    font-size: 48px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    color: #433ECC;
+    line-height: 1.4;
+}
+
+
+
+
+
+
+
+
+
+
 .textSide {
-    width: 50%;
+    width: 770px;
+    height: 706px;
+    background-color: #433ECC;
     padding: 40px;
     text-align: left;
     color: #333;
+    padding-top: 70px;
+    padding: 50px 70px 50px 70px;
 }
 
-.textSide h2 {
-    color: #233FD3;
-    font-size: 32px;
-    margin-bottom: 20px;
+.userSection{
+    font-family: 'Lohit Devanagari', sans-serif;
+    font-size: 20px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin-bottom: 26px;
+    
+    
 }
-
-.textSide p {
-    font-size: 18px;
-    line-height: 1.5;
+.userGreeting{
+    color: #fff;
+    margin-left: 3px;
 }
+.title_text{
+    font-family: 'Inter', sans-serif;
+    font-size: 48px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.4;
+    margin-bottom: 50px;
+}
+.photo_list{
+    display: flex;
+    margin-bottom: 50px;
+}
+.photo{
+    margin-right: 52px;
+    width: 126px;
+    height: 89px;
+}
+.photo:last-child{
+    margin-right: 0;
+}
+.descriptionSection{
+    background-color: #fff;
+    width: 580px;
+    height: 160px;
+    border-radius: 10px;
+    padding: 54px 43px 54px 46px;
+    position: relative;
+    padding-left: 45px;
 
-.shapes {
+   
+}
+.descriptionText{
+    font-family: 'Lohit Devanagari', sans-serif;
+    font-size: 20px;
+    color: #433ECC;
+    margin-left: 20px;
+}
+.comas_list{
+    display: flex;
     position: absolute;
-    top: 10%;
-    right: 10%;
-    width: 200px;
-    height: 200px;
-    background-color: #233FD3;
-    clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
-    transform: rotate(45deg);
+    left: 408px;
+    top: 115px;
 }
-
-.shapes::before {
-    content: '';
-    position: absolute;
-    top: -50px;
-    left: 50px;
-    width: 100px;
-    height: 100px;
-    background-color: #233FD3;
-    border-radius: 50%;
-    z-index: -1;
+.coma{
+    margin-right: 14px;
 }
-
-.shapes::after {
-    content: '';
-    position: absolute;
-    top: 20px;
-    left: -70px;
-    width: 150px;
-    height: 150px;
-    background-color: #233FD3;
-    clip-path: circle();
-    z-index: -1;
+.arrow{
+    margin-top: 29px;
 }

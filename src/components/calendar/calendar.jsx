@@ -98,6 +98,8 @@ const TaskCalendar = () => {
       />
       
       {isOpen && (
+        <>
+        <p className={css.task_you}>Твої задачі</p>
         <ul className={css.taskList}>
           {filteredTasks.map(task => (
            <li key={task._id} className={`${css.taskItem} ${task.done ? 'completed' : ''}`}>
@@ -108,6 +110,9 @@ const TaskCalendar = () => {
            </li>
           ))}
         </ul>
+        
+        
+        </>
       )}
     </div>
   );

@@ -47,10 +47,12 @@
 }
 
 .taskList {
-    margin-top: 20px !important;
+   
     opacity: 0;
     animation: fadeIn 0.5s forwards; /* Анімація появи */
     width: 305px;
+    margin: 0;
+    padding: 0;
 }
 
 @keyframes fadeIn {
@@ -65,11 +67,13 @@
 }
 
 .taskItem {
+    width: 273px;
+    height: 44px;
     border: 1px solid #e0e0e0;
     padding: 15px;
     border-radius: 10px;
     margin-bottom: 15px;
-    background-color: #f9f9f9;
+    background-color: #fff;
     opacity: 0;
     animation: fadeInItem 0.5s forwards; /* Анімація для кожного елемента */
     animation-delay: 0.2s; /* Затримка для кожного елемента */
@@ -191,5 +195,16 @@
     font-weight: bold;
     border-radius: 50%;
     height: 44px;
+  }
+
+
+  .task_you{
+    margin-top: 25px;
+    margin-bottom: 25px;
+   
+    font-weight: 400; /* Regular */
+    font-size: 20px;
+    color: #fff;
+
   }
 
