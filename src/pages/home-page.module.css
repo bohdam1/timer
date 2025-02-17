@@ -1,37 +1,43 @@
 .home_page{
     display: flex;
     height: 703px;
+    height: 100vh;
+    padding: 50px;
+    background-color: #fff;
+    margin: 0 auto;
+    max-width: 1440px;
 }
 
+
 .calendar_container{
-    background-color: #e6e6e6;
-    width: 356px;
-    padding: 40px;
+   
+    width: 206px;
+    padding: 28px 18px 22px;
     background-color: #433ECC;
-    height: 100%;
+    height:599px;
+    border-radius: 10px;
 }
 
 .new_task_button{
-    width: 276px;
+    width: 170px;
     font-family: 'Inter', sans-serif;
-    font-size: 20px;
-    height: 49px;
-    background-color: #233FD3; /* Основний синій колір */
-    color: #FFFFFF; /* Білий текст для контрасту */
+    font-size: 15px;
+    height: 35px;
+    background-color: #433ECC; 
+    color: #FFFFFF; 
     border: 1px solid #FFFFFF; /* Забираємо стандартну рамку */
-    border-radius: 8px; /* Згладжені кути */
-    padding: 12px 20px; /* Відступи для комфортного кліку */
-    font-size: 16px; /* Розмір шрифту */
+    border-radius: 10px; /* Згладжені кути */
+    /* Відступи для комфортного кліку */
     font-weight: bold; /* Жирний текст */
     cursor: pointer; /* Зміна курсора при наведенні */
     
     transition: all 0.3s ease; /* Анімація на взаємодію */
-    margin-bottom: 34px;
+    margin-bottom: 29px;
   }
   
   .new_task_button:hover {
     background-color: #FFFFFF; /* Трохи темніший синій при наведенні */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Сильніша тінь при наведенні */
+    color: #433ECC;
   }
   
   .new_task_button:active {
@@ -44,29 +50,159 @@
    justify-content: center;
   }
   .task_list{
+   margin-left: 32px;
+  }
+  .note{
+    font-size: 32px;
+    color: #FFFFFF;
+    font-weight: 700;
+    margin-right: 22px;
+  }
+
+  
+  
+  
+
+  .toggle {
+    display: none;
+  }
+  
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 99px; /* Зменшена ширина */
+    height: 41px; /* Зменшена висота */
+    background-color:#433ECC;
+    border-radius: 28px; /* Зменшений радіус */
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border: 1px solid #FFFFFF;
+  }
+  
+  .switch::before {
+    content: "";
+    position: absolute;
+    width: 39px;
+    height: 41px;
+    border-radius: 50%;
+    background-color: #fff;
+    top: -1px;
+    left: -1px;
+    transition: transform 0.3s, background-color 0.3s; /* Додаємо анімацію для кольору */
+  }
+
+  
+  .toggle:checked + .switch::before {
+    transform: translateX(60px); /* Відкориговано для нового розміру */
+   
+     /* Зміна кольору на білий при активуванні */
+  }
+  
+  
+
+  .search_input{
+    padding-left: 65px;
+   
+   width: 100%;
+   height: 100%;
+    background-color: #FFFFFF;
+    border-radius: 23px;
+    border: 1px solid #433ECC;
+    color: #999999;
+    font-size: 20px;
+  }
+  .search_input::placeholder{
+    color: #999999;
+    font-size: 20px;
+  }
+  .search_container{
+    position: relative;
+    width: 588px;
+    height: 41px;
+  }
+  .loop{
+    position: absolute;
+    top: 3px;
+    left: 20px;
+    width: 37px;
+    height: 34px;
    
   }
 
-  .filter_button {
-    background-color: #233FD3; /* Основний синій колір */
-    color: #FFFFFF; /* Білий текст */
-    border: none; /* Забираємо стандартну рамку */
-    border-radius: 6px; /* Згладжені кути */
-    padding: 10px 16px; /* Внутрішні відступи для комфортного кліку */
-    font-size: 14px; /* Розмір шрифту */
-    font-weight: 500; /* Напівжирний текст */
-    cursor: pointer; /* Рука-курсор при наведенні */
-    margin: 5px; /* Відступ між кнопками */
-    transition: all 0.3s ease; /* Анімація взаємодії */
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); /* Легка тінь для об'єму */
+  .head {
+    display: flex;
+    width: 1106px;
+    height: 80px;
+    background-color: #433ECC;
+    align-items: center; /* Центрує елементи вертикально */
+    padding: 0 42px 0 42px;
+    border-radius: 10px;
+   
   }
-  
-  .filter_button:hover {
-    background-color: #999a9e; /* Трохи темніший синій при наведенні */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Сильніша тінь при наведенні */
+  .complite{
+    font-size: 20px;
+    color: #FFFFFF;
+    margin-right: 20px;
   }
-  
-  .filter_button:active {
-    background-color: #999a9e; /* Ще темніший синій при натисканні */
-    transform: scale(0.96); /* Легка анімація натискання */
+
+  .filter_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 40px;
+    margin-left: 50px;
+    width: 230px;
+   
   }
+
+  .my_calendar .react-calendar__navigation button {
+    background-color: #233FD3 !important;
+    color: white !important;
+    border-radius: 5px !important;
+    width: 40px !important;
+    height: 40px !important;
+    font-size: 20px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.my_calendar .react-calendar__navigation button:hover {
+    background-color: #1c2fa0 !important;
+}
+
+.hellow_container{
+  display: flex;
+  justify-content: space-between;
+  width: 1106px;
+  border-radius: 20px;
+  background-color: #E6E6E6;
+  padding: 22px 85px 0px 40px;
+  margin-top: 27px;
+}
+.title_name{
+  font-size: 32px;
+  color: #433ECC;
+  font-weight: 700;
+}
+.text_name{
+  font-family: "Lohit Devanagari", sans-serif;
+  font-size: 16px;
+  color: #000;
+  width: 644px;
+  line-height: 20px;
+  font-weight: 400;
+}
+
+
+
+.carouselContainer {
+  width: 100%;
+  max-width: 800px; /* Або інше значення */
+  margin: 0 auto;
+  overflow: hidden; /* Запобігає розтягуванню */
+}
+
+.slick-list{
+  width: 1106px;
+}

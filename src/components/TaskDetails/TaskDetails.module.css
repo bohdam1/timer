@@ -1,132 +1,158 @@
-/* Основні стилі сторінки */
-body {
-    margin: 0;
-    font-family: "Roboto", sans-serif;
-    background: linear-gradient(135deg, #f9f9f9, #eaeaea);
-    color: #333;
-  }
-  
-  .taskDetails {
-    max-width: 600px;
-    margin: 50px auto;
+
+
+  .taskDetails{
+    margin: 0 auto; /* Автоматичні відступи зліва і справа */
+    font-family: 'Inter', sans-serif;
     background: #ffffff;
+    color: #333;
+    padding: 50px;
+    max-width: 1440px;
+  }
+  
+  .button_con{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  }
+  .button_back{
+    width: 59px;
+    height: 59px;
+  }
+
+  .backButton{
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-  }
-  
-  h1 {
+    padding: 14px 22px;
+    width: 400px;
+    height: 59px;
+    background: #433ecc;
+    font-family: var(--font-family);
+    font-weight: 700;
     font-size: 24px;
-    font-weight: bold;
-    color: #3cb4a5;
+    line-height: 120%;
     text-align: center;
+    color: #fff;
+    margin-left: 25px;
   }
-  
-  p {
-    font-size: 16px;
-    line-height: 1.6;
-    color: #555;
-    margin-bottom: 20px;
+
+  .head{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    
+    
   }
-  
-  /* Кнопка Назад */
-  .backButton {
-    display: inline-block;
-    margin-bottom: 20px;
-    padding: 10px 15px;
-    background-color: #fcbf49;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 14px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+  .editableText{
+    border-radius: 10px;
+    padding: 14px 22px;
+    width: 400px;
+    height: 59px;
+    background: #433ecc;
+    font-family: var(--font-family);
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 120%;
+    text-align: center;
+    color: #fff;
+    margin-right: 209px;
   }
-  
-  .backButton:hover {
-    background-color: #faa307;
-  }
-  
-  /* Інпут і текстова область */
-  .input,
-  .textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 14px;
-    box-sizing: border-box;
-    transition: border-color 0.3s ease;
-  }
-  
-  .input:focus,
-  .textarea:focus {
-    border-color: #3cb4a5;
-    outline: none;
-  }
-  
-  /* Кнопки підтвердження та скасування */
-  .buttonGroup {
+
+  .container{
     display: flex;
     justify-content: space-between;
-    margin-top: 20px;
+    margin-top: 78px;
   }
-  
-  .saveButton,
-  .cancelButton {
-    padding: 10px 15px;
-    font-size: 14px;
-    font-weight: bold;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+
+  .description{
+    border: 3px solid #000;
+    border-radius: 40px;
+    width: 837px;
+    height: 325px;
+    font-family: var(--second-family);
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 130%;
+    color: #000;
+    padding: 32px;
   }
-  
-  .saveButton {
-    background-color: #38a169;
-    color: white;
+
+  .ifo_dvn{
+    display: flex;
+    justify-content:flex-end;
+    margin-top: 30px;
   }
-  
-  .saveButton:hover {
-    background-color: #2f855a;
-    transform: scale(1.05);
+
+  .ifo_con{
+    margin-left: 45px;
+    border-radius: 10px;
+    padding: 8px;
+    
+    height: 40px;
+    background: #ff6884;
   }
-  
-  .cancelButton {
-    background-color: #e53e3e;
-    color: white;
+
+  .editButton{
+    border: 1px solid #000;
+    border-radius: 10px;
+    padding: 8px;
+    width: 146px;
+    height: 40px;
+    font-weight: 700;
+    background-color: #fff;
   }
-  
-  .cancelButton:hover {
-    background-color: #c53030;
-    transform: scale(1.05);
+
+  .input_name{
+    /* position: absolute;
+    top: 50px;
+    right: 308px; */
+    border-radius: 10px;
+    padding: 8px;
+    width: 400px;
+    height: 59px;
+    border-radius: 10px;
+    padding: 14px 22px;
+    width: 400px;
+    height: 59px;
+    background: #433ecc;
+    font-family: var(--font-family);
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 120%;
+    text-align: center;
+    color: #fff;
   }
-  
-  /* Елементи для режиму перегляду */
-  .editableText {
-    cursor: pointer;
-    transition: color 0.3s ease;
+
+
+  .textarea{
+    border: 3px solid #000;
+    border-radius: 40px;
+    width: 837px;
+    height: 325px;
+    font-family: var(--second-family);
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 130%;
+    color: #000;
+    padding: 32px;
   }
-  
-  .editableText:hover {
-    color: #3cb4a5;
+
+  .buttonGroup{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
-  
-  /* Ефекти тіні та анімації */
-  .taskDetails {
-    animation: fadeIn 0.5s ease-in-out;
+
+  .editButton_left{
+    border: 1px solid #000;
+    border-radius: 10px;
+    padding: 8px;
+    width: 146px;
+    height: 40px;
+    font-weight: 700;
+    background-color: #fff;
+    margin-left: 45px;
   }
-  
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(-20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+
+  .input{
+    width: 200px;
   }
-  

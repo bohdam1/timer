@@ -18,7 +18,7 @@ export const Layout = () => {
   const isLayoutPage = location.pathname === '/';
   return (
     <>
-        {token && <AppBar />}
+        
       
       <main>
       {!token && isLayoutPage&& <HellowScrean/> }  

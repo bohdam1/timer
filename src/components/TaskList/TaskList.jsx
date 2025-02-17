@@ -1,41 +1,65 @@
 import { useSelector, useDispatch } from "react-redux";
-import { useEffect } from "react";
+import { Component, useEffect, useRef } from "react"; // Додаємо useRef
+import Slider from "react-slick"; // Імпортуємо карусель
 import { TaskItem } from "components/TaskItem/TaskItem";
-import { fetchTasksThunk } from "../../redux/Task/task.thunk"; // імпортуйте ваш thunk для завантаження задач
+import { fetchTasksThunk } from "../../redux/Task/task.thunk"; 
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
 import css from "./TaskList.module.css";
-
-export const TaskList = ({ filter }) => {
+export const TaskList = ({ filter, searchTerm }) => {
   const dispatch = useDispatch();
-
-  // Отримуємо всі задачі зі стейту
   const tasks = useSelector((state) => state.tasks.tasks);
+  const sliderRef = useRef(null); // Створюємо ref для керування слайдером
 
-  // Викликаємо fetchTasksThunk після завантаження компонента
   useEffect(() => {
     dispatch(fetchTasksThunk());
   }, [dispatch]);
 
-  // Фільтруємо задачі в залежності від вибору
-  const filteredTasks = tasks.filter((task) => {
-    if (filter === "completed") {
-      return task.done; // Показуємо тільки виконані задачі
-    }
-    return true; // Показуємо всі задачі
-  });
+  const filteredTasks = tasks
+    .filter((task) => (filter === "completed" ? task.done : true))
+    .filter((task) => task.taskName.toLowerCase().includes(searchTerm.toLowerCase()));
+
+  // Налаштування каруселі
+  const settings = {
+    dots: false,
+    infinite: false,
+    speed: 500,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    arrows: false, // Вимикаємо стандартні стрілки
+  };
 
   return (
-    <ul className={css.list}>
-      {filteredTasks.map((task) => (
-        <TaskItem
-          key={task._id}
-          taskId={task._id}
-          taskName={task.taskName}
-          description={task.description}
-          endTime={task.endTime}
-          timeToSpend={task.timeToSpend}
-          owner={task.owner}
-        />
-      ))}
-    </ul>
+    <div className={css.carouselContainer}>
+      <div className={css.button_container}>
+        <p className={css.slider_title}> Твої завдання</p>
+      <div className={css.controls}>
+        <button onClick={() => sliderRef.current.slickPrev()} className={css.controlButton}>
+          ❮ 
+        </button>
+        <button onClick={() => sliderRef.current.slickNext()} className={css.controlButton}>
+          ❯
+        </button>
+      </div>
+      </div>
+
+      {/* Слайдер */}
+      <Slider ref={sliderRef} {...settings} className={css.slider}>
+        {filteredTasks.map((task) => (
+          
+            <TaskItem
+              key={task._id}
+              taskId={task._id}
+              taskName={task.taskName}
+              description={task.description}
+              endTime={task.endTime}
+              timeToSpend={task.timeToSpend}
+              owner={task.owner}
+              done={task.done}
+            />
+         
+        ))}
+      </Slider>
+    </div>
   );
 };

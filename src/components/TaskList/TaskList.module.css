@@ -1,5 +1,38 @@
-.list{
+
+
+
+.slider{
+    width: 1106px;
+    
+}
+.carouselContainer{
+    margin-top: 24px;
+}
+
+.button_container{
     display: flex;
-    flex-wrap: wrap; /* Дозволяє переносити елементи на наступний рядок */
-    gap: 16px; /* Відстань між елементами */
+    width: 100%;
+    margin-bottom: 15px;
+    justify-content:space-between; /* Вирівнює елементи в правому куті */
+}
+
+.slider_title{
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 136%;
+    letter-spacing: 0.03em;
+    color: #000;
+}
+
+.controls{
+    display: flex;
+}
+.controlButton{
+    width: 55px;
+    height: 60px;
+    color: #fff;
+    background-color: #433ECC;
+    border-radius: 10px;
+    font-size: 32px;
+    margin-right: 20px;
 }

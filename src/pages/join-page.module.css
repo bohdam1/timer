@@ -9,15 +9,15 @@
     width: 712px;
     display: flex;
     flex-direction: column;
-    justify-content: start;
-    align-items:start;
+    justify-content:flex-start;
+    align-items:flex-start;
 }
 
 .userSection{
     font-family: 'Lohit Devanagari', sans-serif;
     font-size: 20px;
     display: flex;
-    justify-content: start;
+    justify-content:flex-start;
     align-items: center;
    
     margin-left: 53px;

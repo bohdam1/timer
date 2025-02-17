@@ -11,61 +11,128 @@
 
 .form-container {
   position: absolute;
-  top: 60px; /* Відступ від верхнього краю */
-  left: 10px; /* Відступ від лівого краю */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
   z-index: 10;
-  background-color: white;
-  padding: 20px;
+  background-color: #433ECC;
+  padding: 91px 50px 50px;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  width: 300px;
+  width: 420px;
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
-.form-container input {
+
+.input{
+  width: 100%;
   width: 100%;
   padding: 10px;
-  margin-bottom: 15px;
-  border: 1px solid #ddd;
+  margin-bottom: 17px;
+  border: 1px solid #fff;
   border-radius: 5px;
-  font-size: 16px;
+  font-size: 20px;
+  border-radius: 10px;
+  background-color: #433ECC;
+  color: #fff;
+}
+.input::placeholder{
+color: #fff;
+font-size: 20px;
+}
+.text_aria{
+  resize: none;
+  height: 134px;
+}
+.text_aria {
+  resize: none; /* Заборона зміни розміру */
+  overflow-y: auto; /* Додає вертикальну прокрутку */
+  scrollbar-width: thin; /* Для Firefox (тонкий скролбар) */
+  scrollbar-color: #433ECC #f0f0f0; /* Колір бігунка та фону */
+}
+
+/* Стилізація скролбара для WebKit (Chrome, Edge, Safari) */
+.text_aria::-webkit-scrollbar {
+  width: 8px; /* Ширина скролбара */
+}
+
+.text_aria::-webkit-scrollbar-track {
+  background: #f0f0f0; /* Колір фону скролбара */
+  border-radius: 4px; /* Закруглення */
+}
+
+.text_aria::-webkit-scrollbar-thumb {
+  background-color: #433ECC; /* Колір бігунка */
+  border-radius: 4px;
+  border: 2px solid #f0f0f0; /* Відступ від країв */
+}
+
+.text_aria::-webkit-scrollbar-thumb:hover {
+  background-color: #433ECC; /* Темніший колір при наведенні */
 }
 
 .form-container input[type="number"] {
   -moz-appearance: textfield; /* Видаляє стиль для number input */
 }
 
-.form-container button {
- 
-  background-color: #4caf50;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  font-size: 16px;
-  cursor: pointer;
-}
 
-.form-container button:hover {
-  background-color: #45a049;
-}
+
 
 .close-button {
   position: absolute;
-  top: 10px;
-  right: 10px;
-  width: 20px;
-  height: 20px;
+  top: 41px;
+  right: -4px;
+  width: 44px;
+  height: 44px;
   background-color: transparent;
-  border: none;
-  font-size: 20px;
-  color: #888;
+ 
+  font-size: 25px;
+  color: #fff;
   cursor: pointer;
-  transform: translate(-50%, -50%); /* Centers the button relative to its top-right position */
+  transform: translate(-50%, -50%);
+  background-color: #433ECC;
+  border: 2px solid #fff;
+  border-radius: 10px
 }
 
 
 .close-button:hover {
   color: #444;
+}
+
+
+.submit_buttton{
+  width: 100%;
+  height: 52px;
+  color:#433ECC;
+  background-color: #fff;
+  border-radius: 10px;
+  font-weight: 700;
+}
+
+
+.inputContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 24px;
+  height: 24px;
+  color: #433ECC;
+}
+
+
+
+.input:focus {
+  border-color: #433ECC;
+  box-shadow: 0 0 5px rgba(67, 62, 204, 0.5);
 }

@@ -1,80 +1,82 @@
 import React, { useState, useEffect } from 'react';
+import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
+import 'react-circular-progressbar/dist/styles.css';
 import css from "./timer.module.css";
+import { ReactComponent as Stop } from '../ICONS/photo/Group 92.svg';
+import { ReactComponent as Start } from '../ICONS/photo/Group 94.svg';
+import { ReactComponent as Reset } from '../ICONS/photo/Group 96.svg';
 
-const TaskTimer = ({ taskId, onElapsedMinutesChange }) => {
-  const [seconds, setSeconds] = useState(() => {
-    const savedSeconds = localStorage.getItem(`timerSeconds-${taskId}`);
-    return savedSeconds ? parseInt(savedSeconds, 10) : 0;
-  });
-  const [isRunning, setIsRunning] = useState(() => {
-    const savedRunningStatus = localStorage.getItem(`timerRunningStatus-${taskId}`);
-    return savedRunningStatus === 'true'; // Якщо в localStorage збережений статус таймера "running", то ставимо true
-  });
+const TaskTimer = ({ taskId, deadlineHours, createdAt }) => {
+  const deadlineSeconds = deadlineHours * 3600;
+  const initialStartTime = new Date(createdAt).getTime();
 
-  const [startTime, setStartTime] = useState(() => {
-    const savedStartTime = localStorage.getItem(`timerStartTime-${taskId}`);
-    return savedStartTime ? parseInt(savedStartTime, 10) : Date.now();
+  const [startTime, setStartTime] = useState(initialStartTime);
+  const [elapsedSeconds, setElapsedSeconds] = useState(() => {
+    return Math.floor((Date.now() - initialStartTime) / 1000);
   });
 
-  useEffect(() => {
-    if (isRunning) {
-      const interval = setInterval(() => {
-        const elapsed = Math.floor((Date.now() - startTime) / 1000);
-        setSeconds(elapsed);
-        localStorage.setItem(`timerSeconds-${taskId}`, elapsed.toString());
-      }, 1000);
-      return () => clearInterval(interval);
-    }
-  }, [isRunning, startTime, taskId]);
+  const [isRunning, setIsRunning] = useState(true);
 
   useEffect(() => {
-    localStorage.setItem(`timerRunningStatus-${taskId}`, isRunning.toString());
-  }, [isRunning, taskId]);
+    if (!isRunning) return;
 
-  useEffect(() => {
-    onElapsedMinutesChange(seconds);
-  }, [seconds, onElapsedMinutesChange]);
+    const updateTimer = () => {
+      setElapsedSeconds(Math.floor((Date.now() - startTime) / 1000));
+    };
 
-  // Старт таймера
-  const startTimer = () => {
-    const currentStartTime = Date.now() - seconds * 1000;
-    localStorage.setItem(`timerStartTime-${taskId}`, currentStartTime.toString());
-    setStartTime(currentStartTime);
+    const interval = setInterval(updateTimer, 1000);
+    return () => clearInterval(interval);
+  }, [startTime, isRunning]);
+
+  const handleStart = () => {
     setIsRunning(true);
+    setStartTime(Date.now() - elapsedSeconds * 1000);
   };
 
-  // Зупинка таймера
-  const stopTimer = () => {
-    setIsRunning(false);
-    localStorage.removeItem(`timerStartTime-${taskId}`);
-  };
+  const handleStop = () => setIsRunning(false);
 
-  // Скидання таймера
   const handleReset = () => {
-    setSeconds(0);
     setIsRunning(false);
-    localStorage.removeItem(`timerStartTime-${taskId}`);
-    localStorage.removeItem(`timerSeconds-${taskId}`);
-    localStorage.removeItem(`timerRunningStatus-${taskId}`);
+    setElapsedSeconds(0);
+    setStartTime(Date.now());
   };
+
+  const remainingSeconds = Math.max(deadlineSeconds - elapsedSeconds, 0);
+  const progress = (elapsedSeconds / deadlineSeconds) * 100;
 
   const formatTime = (totalSeconds) => {
     const hours = Math.floor(totalSeconds / 3600);
     const minutes = Math.floor((totalSeconds % 3600) / 60);
-    const remainingSeconds = totalSeconds % 60;
-    return `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${remainingSeconds.toString().padStart(2, '0')}`;
+    const seconds = totalSeconds % 60;
+    return `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
   };
 
   return (
     <div className={css.container}>
-      <h2 className={css.timer}>{formatTime(seconds)}</h2>
-      <div className={css.button_con}>
-        {isRunning ? (
-          <button className={css.button_stop} onClick={stopTimer}>Stop</button>
-        ) : (
-          <button className={css.button_start} onClick={startTimer}>Start</button>
-        )}
-        <button className={css.button_reset} onClick={handleReset}>Reset</button>
+      <div className={css.progress_wrapper}>
+        <CircularProgressbar
+          value={progress}
+          text={formatTime(remainingSeconds)}
+          styles={buildStyles({
+            textSize: '64px', // Задаємо розмір шрифту
+            textColor: 'transparent', // Робимо текст прозорим
+            pathColor: '#FF6884',
+            trailColor: '#ddd',
+            strokeLinecap: 'round',
+          })}
+        />
+        <div className={css.timerText}>{formatTime(remainingSeconds)}</div>
+      </div>
+      <div className={css.controls}>
+        <button onClick={handleStart} disabled={isRunning}>
+          <Start/>
+        </button>
+        <button onClick={handleStop} disabled={!isRunning}>
+          <Stop/>
+          </button>
+        <button onClick={handleReset}>
+          <Reset/>
+        </button>
       </div>
     </div>
   );

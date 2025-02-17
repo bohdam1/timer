@@ -17,22 +17,14 @@ export const AppBar = () => {
   
     
   
-    const handleLogout = async () => {
-      // try {
-        
-      //   await dispatch(LogoutThunk());
-      //   localStorage.removeItem('persist:auth');
-        
-      // } catch (error) {
-      //   console.error('Logout failed:', error);
-      // }
-    };
+    
+    ;
   
-    // return (
-    //   <header className={css.header}>
+    return (
+      <header className={css.header}>
         
-    //     <ProfileMenu/>
+        <ProfileMenu/>
 
-    //   </header>
-    // );
+      </header>
+    );
   };

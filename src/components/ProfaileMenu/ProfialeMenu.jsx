@@ -1,38 +1,48 @@
 import React, { useState } from 'react';
-import { ReactComponent as UserIcon } from '../ICONS/reshot-icon-user-profile-EM8NS2L5GW.svg';
 import { ReactComponent as Settings } from '../ICONS/icons8-settings.svg';
 import { ReactComponent as Logout } from '../ICONS/logout-svgrepo-com.svg';
 import { Link } from 'react-router-dom';
 import css from "./ProfialeMenu.module.css";
-import { logout } from "../../redux/Auth/slise.auth"; // Імпорт дії logout
+import { logout } from "../../redux/Auth/slise.auth";
 import { useDispatch } from 'react-redux';
+import { ReactComponent as MenuIcon } from "../ICONS/MEEE.svg";
 
 const ProfileMenu = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const dispatch = useDispatch(); // Ініціалізація useDispatch
-
-  const handleMouseEnter = () => {
-    setIsMenuOpen(true);
-  };
-
-  const handleMouseLeave = () => {
-    setIsMenuOpen(false);
-  };
+  const [isIconFaded, setIsIconFaded] = useState(false); // Для ефекту прозорості
+  const dispatch = useDispatch();
 
   const handleLogout = () => {
-    dispatch(logout()); // Виклик дії logout для очищення авторизаційного стану
-    window.location.href = '/timer'; // Перенаправлення на сторінку '/timer'
+    dispatch(logout());
+    window.location.href = '/timer';
+  };
+
+  const handleMenuToggle = () => {
+    setIsMenuOpen(!isMenuOpen);
+    setIsIconFaded(prevState => !prevState); // Перемикаємо прозорість іконки
   };
 
   return (
-    <div 
-      className={css.profileicon}
-      onMouseEnter={handleMouseEnter} 
-      onMouseLeave={handleMouseLeave}
-    >
-      <UserIcon size={30} className={css.icons} />
+    <div className={css.profileicon}>
+      {/* Іконка меню з ефектом прозорості */}
+      <div 
+        onClick={handleMenuToggle}
+        className={css.menu_icon}
+        style={{
+          opacity: isIconFaded ? 0.6 : 1, // Змінюємо прозорість
+          transition: 'opacity 0.3s ease'
+        }}
+      >
+        <MenuIcon />
+      </div>
+
+      {/* Меню */}
       {isMenuOpen && (
-        <div className={css.profilemenu}>
+        <div 
+          className={css.profilemenu} 
+          onMouseEnter={() => setIsMenuOpen(true)}
+          onMouseLeave={() => setIsMenuOpen(false)}
+        >
           <Link to="/settings" className={css.profilemenuButton}>
             <Settings className={css.profaileIcons} />
             Налаштування

@@ -82,6 +82,10 @@ select {
   font: inherit; /* Успадковує шрифт від батьківського елемента */
   display: block;
 }
+input:focus {
+  outline: none;
+  box-shadow: none;
+}
 
 button {
   cursor: pointer;
@@ -122,4 +126,68 @@ hr {
   border: none;
   border-top: 1px solid #ccc;
   margin: 1em 0;
+}
+
+
+.reactcalendar .react-calendar__navigation button {
+  font-size: 10px !important; /* Розмір тексту кнопок навігації */
+  color: green !important; /* Колір тексту */
+  height: 10px;
+}
+
+
+
+.reactcalendar {
+  border-radius: 10px ;
+  border: 0 ;
+  width: 170px ;
+  height: 180px;
+  background-color: #fff;
+}
+.react-calendar__navigation{
+  display: flex;
+  justify-content: center;
+}
+.react-calendar__navigation__arrow{
+  width: 32px;
+}
+.react-calendar__navigation__label{
+  width: 32px;
+}
+.react-calendar__navigation{
+  margin-bottom: -3px;
+}
+.react-calendar__month-view__weekdays__weekday{
+  font-size: 13px;
+    font-weight: 700;
+   
+   padding: 6px;
+}
+
+.react-calendar__month-view__days__day{
+ font-size: 10px;
+  margin-bottom: 3px;
+  padding: 3px;
+
+}
+.react-calendar__month-view__days__day--neighboringMonth{
+  color: rgba(77, 75, 75, 0.463);
+  opacity: 1;
+}
+.react-calendar__tile--active {
+  border-radius: 5px;
+  background: #8d9092 !important;
+  color: white !important;
+}
+
+.CircularProgressbar-path{
+  width: 325px;
+  height: 325px;
+}
+
+.CircularProgressbar .CircularProgressbar-path {
+  stroke: #FF6884;
+  stroke-linecap: round;
+  -webkit-transition: stroke-dashoffset 0.5s ease 0s;
+  transition: stroke-dashoffset 0.5s ease 0s;
 }

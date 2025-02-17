@@ -57,7 +57,7 @@
     font-family: 'Lohit Devanagari', sans-serif;
     font-size: 20px;
     display: flex;
-    justify-content: start;
+    justify-content:flex-start;
     align-items: center;
     margin-bottom: 26px;
     

@@ -1,37 +1,45 @@
-/* Загальний контейнер сторінки */
+.seating_page{
+  margin: 0 auto;
+  padding: 32px;
+}
+  /* Загальний контейнер сторінки */
 .settingsContainer {
-    max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
     margin: 0 auto;
-    padding: 20px;
-    font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+      width: 846px;
+      height: 512px;
+      background: #e6e6e6;
+      padding: 20px;
+      margin-top: 50px;
   }
   
   /* Заголовок сторінки */
   .settingsTitle {
+    font-family: var(--font-family);
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 136%;
+    letter-spacing: 0.03em;
+    color: #433ecc;
     text-align: center;
-    font-size: 24px;
+   
     font-weight: bold;
-    margin-bottom: 20px;
+    margin-bottom: 43px;
     color: #233fd3;
   }
   
-  /* Заголовки секцій */
-  .sectionTitle {
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 10px;
-    color: #333;
-  }
+  
   
   /* Контейнер форми */
   .passwordForm {
-    display: flex;
-    flex-direction: column;
+   
+  
     gap: 15px;
+    width: 438px;
   }
   
   /* Контейнер для кожного поля вводу */
@@ -42,18 +50,23 @@
   
   /* Мітка (label) */
   .formLabel {
-    font-size: 14px;
-    color: #555;
-    margin-bottom: 5px;
+    font-family: var(--second-family);
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 130%;
+    color: #433ecc;
   }
   
   /* Поле вводу */
   .formInput {
-    padding: 10px;
-    font-size: 14px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    transition: border-color 0.3s ease;
+    border: 1px solid #433ecc;
+    border-radius: 10px;
+    padding: 14px 22px;
+    width: 100%;
+    height: 48px;
+    margin-top: 8px;
+    margin-bottom: 18px;
+    background: #e6e6e6;
   }
   
   .formInput:focus {
@@ -63,15 +76,20 @@
   
   /* Кнопка форми */
   .submitButton {
-    padding: 10px 15px;
-    font-size: 16px;
-    font-weight: bold;
-    color: white;
-    background-color: #233fd3;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+      border-radius: 10px;
+    padding: 14px 22px;
+    width: 438px;
+    height: 44px;
+    background: #433ecc;
+    font-family: var(--font-family);
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 120%;
+    text-align: center;
+    color: #fff;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 17px;
   }
   
   .submitButton:hover {
@@ -87,23 +105,7 @@
   }
   
   /* Секція аватарки */
-  .avatarSection {
-    text-align: center;
-  }
-  
-  /* Контейнер для попереднього перегляду аватарки */
-  .avatarPreviewContainer {
-    margin-bottom: 10px;
-  }
-  
-  /* Стиль зображення попереднього перегляду */
-  .avatarPreview {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 2px solid #233fd3;
-  }
+ 
   
   /* Кнопка вибору файлу */
   .fileInput {
@@ -157,4 +159,44 @@
   .deleteButton:hover {
     background-color: #c9302c;
   }
+
+  .backButton{
+    border-radius: 10px;
+    padding: 14px 22px;
+    width: 400px;
+    height: 59px;
+    background: #433ecc;
+    font-family: var(--font-family);
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 120%;
+    text-align: center;
+    color: #fff;
+    margin-left: 25px;
+  }
+  .button_con{
+    display: flex;
+    justify-content:flex-start;
+    align-items: center;
+    
+  }
+  .button_back{
+    width: 59px;
+    height: 59px;
+  }
+  .deleteAccountButton{
+    margin-top: 34px;
+      border: 1px solid #ff6884;
+  border-radius: 10px;
+  padding: 14px 22px;
+  width: 438px;
+  height: 44px;
+  font-family: var(--font-family);
+font-weight: 700;
+font-size: 20px;
+line-height: 120%;
+text-align: center;
+color: #ff6884;
+  }
+
   

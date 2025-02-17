@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { addTaskThunk } from "../../redux/Task/task.thunk"; // Імпортуємо thunk для додавання задачі
-import styles from './NewTask.module.css'; // Імпортуємо стилі
+import { addTaskThunk } from "../../redux/Task/task.thunk"; 
+import styles from './NewTask.module.css'; 
 
 const NewTask = ({ onClose }) => {
   const [taskName, setTaskName] = useState("");
@@ -13,13 +13,12 @@ const NewTask = ({ onClose }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Перетворення дати у потрібний формат
     const formattedEndTime = new Date(endTime).toISOString();
 
     const taskData = {
       taskName,
       description,
-      endTime: formattedEndTime, // Використовуємо перетворену дату
+      endTime: formattedEndTime,
       timeToSpend,
     };
     console.log(taskData);
@@ -45,33 +44,54 @@ const NewTask = ({ onClose }) => {
         >
           ×
         </button>
-        <input
-          type="text"
-          value={taskName}
-          onChange={(e) => setTaskName(e.target.value)}
-          placeholder="Task Name"
-          required
-        />
-        <input
-          type="text"
+
+        <div className={styles.inputContainer}>
+          
+          <input
+            type="text"
+            value={taskName}
+            onChange={(e) => setTaskName(e.target.value)}
+            placeholder="Назва завдання"
+            required
+            className={styles.input}
+          />
+        </div>
+
+        <div className={styles.inputContainer}>
+          
+        <textarea
           value={description}
           onChange={(e) => setDescription(e.target.value)}
-          placeholder="Description"
+          placeholder="Опис"
           required
+          className={`${styles.input} ${styles.text_aria}`}
         />
-        <input
-          type="datetime-local"
-          value={endTime}
-          onChange={(e) => setEndTime(e.target.value)}
-          required
-        />
-        <input
-          type="number"
-          value={timeToSpend}
-          onChange={(e) => setTimeToSpend(Number(e.target.value))}
-          required
-        />
-        <button type="submit">Create Task</button>
+        </div>
+
+        <div className={styles.inputContainer}>
+          
+          <input
+            type="datetime-local"
+            value={endTime}
+            onChange={(e) => setEndTime(e.target.value)}
+            required
+            className={styles.input}
+          />
+        </div>
+
+        <div className={styles.inputContainer}>
+          
+          <input
+            type="number"
+            value={timeToSpend}
+            onChange={(e) => setTimeToSpend(Number(e.target.value))}
+            required
+            className={styles.input}
+            placeholder="Час"
+          />
+        </div>
+
+        <button type="submit" className={styles.submit_buttton}>Створити</button>
       </form>
     </>
   );

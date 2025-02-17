@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import Calendar from 'react-calendar';
-import 'react-calendar/dist/Calendar.css';
+
 import css from './calendar.module.css'; // Імпортуємо CSS модуль
 
 const TaskCalendar = () => {
@@ -85,12 +85,12 @@ const TaskCalendar = () => {
   const filteredTasks = tasks.filter(task => new Date(task.endTime).toDateString() === selectedDate);
 
   return (
-    <div>
+    <div className={css.my_calendar}>
       <Calendar
         onChange={setValue}
         value={value}
         tileClassName={tileClassName}
-        className={css.reactcalendar}
+        className={`my_calendar ${css.reactcalendar}`}
         formatMonthYear={formatMonthYear} // Формат місяця і року
         next2Label={null} // Приховуємо стрілочки для зміни року
         prev2Label={null} // Приховуємо стрілочки для зміни року
@@ -102,8 +102,8 @@ const TaskCalendar = () => {
         <p className={css.task_you}>Твої задачі</p>
         <ul className={css.taskList}>
           {filteredTasks.map(task => (
-           <li key={task._id} className={`${css.taskItem} ${task.done ? 'completed' : ''}`}>
-             {task.done && <div className={css.taskCompletedIcon}></div>}
+           <li key={task._id} className={`${css.taskItem} ${task.done ? css.completed : ''}`}>
+             {task.done && <div className={css.taskCompletedIcon}>✔</div>}
              <div>
                <h3 className={task.done ? css.doneTask : ''}>{task.taskName}</h3>
              </div>

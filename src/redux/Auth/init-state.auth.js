@@ -1,4 +1,7 @@
 export const authInitState = {
-    token: {}
+    token: {},
+    name: {},
+
+
     
 };
