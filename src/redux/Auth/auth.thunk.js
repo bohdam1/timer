@@ -25,7 +25,8 @@ export const deleteAccountThunk = createAsyncThunk(
       if (!token) {
         throw new Error("Токен не знайдено");
       }
-
+  
+      
       const response = await privateApi.delete("/auth/account", {
         headers: {
           "Content-Type": "application/json",
