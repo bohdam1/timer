@@ -1,11 +1,11 @@
 import axios from "axios";
 
 export const privateApi = axios.create({
-    baseURL: 'http://localhost:3000/api',
+    baseURL: 'https://goit-node-rest-api-c9hs.onrender.com',
    
 })
 
 export const PublickApi = axios.create({
-    baseURL: 'http://localhost:3000/api',
+    baseURL: 'https://goit-node-rest-api-c9hs.onrender.com',
    
 })
