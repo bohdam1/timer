@@ -14,7 +14,7 @@ const ProfileMenu = () => {
 
   const handleLogout = () => {
     dispatch(logout());
-    window.location.href = '/timer';
+    window.location.href = '/';
   };
 
   const handleMenuToggle = () => {
