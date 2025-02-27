@@ -26,18 +26,18 @@ export const LoginPage = () => {
                 
                 <h2 className={css.title_text}>Плануйте без зайвого клопоту</h2>
                 <div className={css.photo_list}>
-                    <img className={css.photo} src={phtyhre} alt="image"/>
-                    <img className={css.photo} src={phone} alt="image"/>
-                    <img className={css.photo} src={phtwo} alt="image"/>
-                    <img className={css.photo} src={fore} alt="image"/>
+                    <img className={css.photo} src={phtyhre} alt="car"/>
+                    <img className={css.photo} src={phone} alt="cet"/>
+                    <img className={css.photo} src={phtwo} alt="gog"/>
+                    <img className={css.photo} src={fore} alt="top"/>
                 </div>
                 <div className={css.descriptionSection}>
                     <p className={css.descriptionText}>
                         Організуйте свої думки, справи та мрії. Плануйте легко, досягайте більше.
                     </p>
                     <div className={css.comas_list}>
-                        <img className={css.coma} src={comas}/>
-                        <img className={css.comas} src={comas}/>
+                        <img className={css.coma} src={comas} alt="comas"/>
+                        <img className={css.comas} src={comas} alt="comas"/>
                     </div>
                 </div>
                 <Arrow className={css.arrow}/>

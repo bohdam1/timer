@@ -42,13 +42,13 @@ export const TaskItem = ({ taskId, taskName, description, done }) => {
 
       <div className={css.button_container}>
         {!done ? (
-          <button className={css.button_done} onClick={handleDone}>
+          <button className={css.button_done} onClick={handleDone} aria-label="Позначити як виконане">
             <Galka  />
           </button>
         ) : (
           <span className={css.completed_text}>Виконано</span>
         )}
-        <button className={css.button_delete} onClick={handleDelete}>
+        <button className={css.button_delete} onClick={handleDelete} aria-label="Видалити завдання">
         {!done ? (
           <Tresh />
         ) : (

@@ -8,7 +8,7 @@ import {store} from "./redux/store"
 import { PersistGate } from 'redux-persist/integration/react';
 import {persistor} from "./redux/store"
 import {BrowserRouter} from "react-router-dom"
-import { ToastContainer } from 'react-toastify';
+
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>

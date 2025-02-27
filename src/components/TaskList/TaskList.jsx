@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from "react-redux";
-import { Component, useEffect, useRef } from "react"; // Додаємо useRef
+import {  useEffect, useRef } from "react"; // Додаємо useRef
 import Slider from "react-slick"; // Імпортуємо карусель
 import { TaskItem } from "components/TaskItem/TaskItem";
 import { fetchTasksThunk } from "../../redux/Task/task.thunk"; 
@@ -15,7 +15,7 @@ export const TaskList = ({ filter, searchTerm }) => {
     dispatch(fetchTasksThunk());
   }, [dispatch]);
 
-  const filteredTasks = tasks
+  const FilteredTasks = tasks
     .filter((task) => (filter === "completed" ? task.done : true))
     .filter((task) => task.taskName.toLowerCase().includes(searchTerm.toLowerCase()));
 
@@ -45,7 +45,7 @@ export const TaskList = ({ filter, searchTerm }) => {
 
       {/* Слайдер */}
       <Slider ref={sliderRef} {...settings} className={css.slider}>
-        {filteredTasks.map((task) => (
+        {FilteredTasks.map((task) => (
           
             <TaskItem
               key={task._id}

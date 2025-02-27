@@ -14,7 +14,7 @@ const TaskDetails = () => {
   const [task, setTask] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [elapsedSeconds, setElapsedSeconds] = useState(0);
+  const [, setElapsedSeconds] = useState(0);
   // Стан для редагування
   const [taskName, setTaskName] = useState("");
   const [createdAt, setcreatedAt] = useState("");

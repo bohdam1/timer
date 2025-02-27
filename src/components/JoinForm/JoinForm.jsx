@@ -13,7 +13,7 @@ const initialState = {
 
 export const JoinForm = () => {
   const [formData, setFormData] = useState(initialState);
-  const error = () => toast.error("Error!");
+  
   const navigate = useNavigate();
 
   const handleChange = (event) => {

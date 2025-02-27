@@ -80,7 +80,7 @@ const TaskCalendar = () => {
     setIsOpen(!isOpen); // Toggle visibility of task list on date click
   };
 
-  const toggleTaskList = () => setIsOpen(!isOpen); // Тогл для списку завдань
+
 
   const filteredTasks = tasks.filter(task => new Date(task.endTime).toDateString() === selectedDate);
 
